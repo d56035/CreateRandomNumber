@@ -1,0 +1,50 @@
+function genNum(){
+	var init = document.getElementById("init").value;
+	init = parseInt(init);
+	console.log(init);
+	var term = document.getElementById("term").value;
+	term = parseInt(term);
+
+	if(isNaN(init) || isNaN(term)){
+		document.getElementById('msg').innerHTML = '数字を入力してください。'+ '<br>';
+		return;
+	}
+
+	if(term-init<0){
+		document.getElementById('msg').innerHTML = '始まりの数の方が大きいので小さくしてください。'+ '<br>';
+		return;
+	}
+
+	document.getElementById("init").disabled = true;
+	document.getElementById("term").disabled = true;
+	document.getElementById("repeat").disabled = true;
+
+	var random = Math.floor( Math.random() * (term) ) + init;
+	const repeat = document.getElementById('repeat');
+
+	if(repeat.checked){
+		var st = document.getElementById('num').innerHTML;
+		var array = st.split(', ').map(Number);
+		array.pop();
+
+		if(array.length==term-init+1){
+			document.getElementById('msg').innerHTML = 'すべての数が出現しました。リセットしてください。'+ '<br>';
+			return;
+		}
+
+		while(array.includes(random)) random = Math.floor( Math.random() * (term) ) + init;
+		
+		document.getElementById('num').innerHTML += random + ', ';
+		document.getElementById('recent').innerHTML = random;
+	}else{
+		document.getElementById('num').innerHTML += random + ', ';
+		document.getElementById('recent').innerHTML = random;
+	}
+}
+function resetNum(){
+	document.getElementById('num').innerHTML = '';
+	document.getElementById('msg').innerHTML = '';
+	document.getElementById("init").disabled = false;
+	document.getElementById("term").disabled = false;
+	document.getElementById("repeat").disabled = false;
+}

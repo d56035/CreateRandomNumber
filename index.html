@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+  <html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <script src="a.js"></script>
+    <link rel="stylesheet" href="a.css">
+    <title>サイトタイトル</title>
+  </head>
+  
+  <body>
+    範囲指定：<input type="number" id="init" value=1> から <input type="number" id="term" value=10>
+    <br>
+    <input type="checkbox" id="repeat" checked>数を重複させない</input>
+    <br>
+    <button type="button" class="button" onclick="genNum()">生成</button>
+    <button type="button" class="button" onclick="resetNum()">リセット</button>
+
+    <p id="msg"></p>
+    <p id="recent"></p>
+    <p id="num"></p>
+  </body>
+</html>
