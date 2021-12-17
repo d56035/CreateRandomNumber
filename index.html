@@ -6,12 +6,12 @@
   </head>
  
   <body>
-    範囲指定：<input type="number" id="init"> から <input type="number" id="term">
+    範囲指定：<input type="number" id="init" value=1> から <input type="number" id="term" value=10>
     <br>
     <input type="checkbox" id="repeat" checked>数を重複させない</input>
     <br>
-    <button type="button" onclick="genNum()">生成</button>
-    <button type="button" onclick="resetNum()">リセット</button>
+    <button type="button" class="button" onclick="genNum()">生成</button>
+    <button type="button" class="button" onclick="resetNum()">リセット</button>
     <script>
       function genNum(){
 	var init = document.getElementById("init").value;
@@ -63,12 +63,15 @@
     </script>
     <style>
       #recent{
-        font-size: 150px;
+        font-size: 1000%;
 	text-align: center;
       }
  
       #num{
-        font-size: 20px;
+        font-size: 150%;
+      }
+      .button{
+	font-size: 200%;
       }
     </style>
     <p id="msg"></p>
