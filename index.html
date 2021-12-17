@@ -5,7 +5,14 @@
     <title>サイトタイトル</title>
   </head>
  
- <body>
-  Hello
- </body>
+  <body>
+    <button type="button" onclick="genNum()">クリックして下さい</button>
+    <script>
+      function genNum(){
+        var random = Math.floor( Math.random() * 11 );
+        document.getElementById('num').innerHTML = random;
+      }
+    </script>
+    <p id="num"></p>
+  </body>
 </html>
