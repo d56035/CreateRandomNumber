@@ -2,13 +2,13 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
-    <title>乱数生成（ビンゴ用）</title>
+    <title>サイトタイトル</title>
   </head>
  
   <body>
     範囲指定：<input type="number" id="init"> から <input type="number" id="term">
     <br>
-    <input type="checkbox" name="repeat" checked>数を重複させない</input>
+    <input type="checkbox" id="repeat" checked>数を重複させない</input>
     <br>
     <button type="button" onclick="genNum()">生成</button>
     <button type="button" onclick="resetNum()">リセット</button>
@@ -16,6 +16,7 @@
       function genNum(){
 	var init = document.getElementById("init").value;
 	init = parseInt(init);
+	console.log(init);
 	var term = document.getElementById("term").value;
 	term = parseInt(term);
 
@@ -31,11 +32,12 @@
 
 	document.getElementById("init").disabled = true;
 	document.getElementById("term").disabled = true;
+	document.getElementById("repeat").disabled = true;
 
         var random = Math.floor( Math.random() * (term) ) + init;
-	const repeat = document.getElementsByName('repeat');
+	const repeat = document.getElementById('repeat');
 
-        if(repeat[0].checked){
+        if(repeat.checked){
           var st = document.getElementById('num').innerHTML;
           var array = st.split(', ').map(Number);
 	  array.pop();	
@@ -56,6 +58,7 @@
 	document.getElementById('msg').innerHTML = '';
 	document.getElementById("init").disabled = false;
 	document.getElementById("term").disabled = false;
+	document.getElementById("repeat").disabled = false;
       }
     </script>
     <style>
