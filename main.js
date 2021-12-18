@@ -44,6 +44,7 @@ function genNum(){
 function resetNum(){
 	document.getElementById('num').innerHTML = '';
 	document.getElementById('msg').innerHTML = '';
+	document.getElementById('recent').innerHTML = '';
 	document.getElementById("init").disabled = false;
 	document.getElementById("term").disabled = false;
 	document.getElementById("repeat").disabled = false;
