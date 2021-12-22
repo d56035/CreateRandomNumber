@@ -1,7 +1,6 @@
 function genNum(){
 	var init = document.getElementById("init").value;
 	init = parseInt(init);
-	console.log(init);
 	var term = document.getElementById("term").value;
 	term = parseInt(term);
 
