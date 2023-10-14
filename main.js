@@ -14,6 +14,11 @@ function genNum(){
 		return;
 	}
 
+	if(term<0 || init<0){
+		documuent.getElementById('msg').innerHTML = '負の数は受け付けていません。'+'<br>';
+		return;
+	}
+	
 	document.getElementById("init").disabled = true;
 	document.getElementById("term").disabled = true;
 	document.getElementById("repeat").disabled = true;
@@ -40,6 +45,7 @@ function genNum(){
 		document.getElementById('recent').innerHTML = random;
 	}
 }
+
 function resetNum(){
 	document.getElementById('num').innerHTML = '';
 	document.getElementById('msg').innerHTML = '';
