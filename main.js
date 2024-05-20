@@ -25,26 +25,22 @@ function genNum(){
 
     var random = Math.floor(Math.random() * (term - init + 1)) + init;
     const repeat = document.getElementById('repeat');
+    var numbers = document.getElementById('num').innerHTML.split(', ').filter(Boolean).map(Number);
 
     if(repeat.checked){
-        var st = document.getElementById('num').innerHTML;
-        var array = st.split(', ').filter(Boolean).map(Number);
-
-        if(array.length == (term - init + 1)){
+        if(numbers.length == (term - init + 1)){
             document.getElementById('msg').innerHTML = 'すべての数が出現しました。リセットしてください。'+ '<br>';
             return;
         }
 
-        while(array.includes(random)) {
+        while(numbers.includes(random)) {
             random = Math.floor(Math.random() * (term - init + 1)) + init;
         }
-
-        document.getElementById('num').innerHTML += random + ', ';
-        document.getElementById('recent').innerHTML = random;
-    } else {
-        document.getElementById('num').innerHTML += random + ', ';
-        document.getElementById('recent').innerHTML = random;
     }
+
+    numbers.push(random);
+    document.getElementById('num').innerHTML = numbers.join(', ');
+    document.getElementById('recent').innerHTML = random;
 }
 
 function resetNum(){
