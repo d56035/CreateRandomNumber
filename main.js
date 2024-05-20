@@ -23,7 +23,7 @@ function genNum(){
 	document.getElementById("term").disabled = true;
 	document.getElementById("repeat").disabled = true;
 
-	var random = Math.floor( Math.random() * (term) ) + init;
+	var random = Math.floor(Math.random() * (term - init + 1)) + init;
 	const repeat = document.getElementById('repeat');
 
 	if(repeat.checked){
