@@ -1,2 +1,2 @@
-You can enjoy bingo game here.
+You can play bingo game here.
 https://yuzu-juice.github.io/bingo/
